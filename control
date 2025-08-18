@@ -1,8 +1,8 @@
 Package: dev.preloading.ninaswitcherforaim
 Name: NINA Switcher for AIM
-Version: 1.0.0
+Version: 1.1.0
 Architecture: iphoneos-arm
-Description: An basic tweak to swap the URLs of AIM apps to NINA's servers
+Description: An  tweak to swap the URLs of AIM apps to NINA's servers
 Maintainer: Preloading
 Author: Preloading
 Section: Tweaks
