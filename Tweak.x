@@ -27,14 +27,14 @@
 
 	NSURL *originalURL = %orig(URLString);
 	if (!originalURL) {
-		NSLog([NSString stringWithFormat:@"[AIM Patcher] Bad URL: %@", URLString]);
+		NSLog([NSString stringWithFormat:@"[NINA Patcher] Bad URL: %@", URLString]);
 		return originalURL;
 	}
 	
 
 	NSString *host = [originalURL host];
 	if (!host) {
-		NSLog([NSString stringWithFormat:@"[AIM Patcher] Bad URL: %@", URLString]);
+		NSLog([NSString stringWithFormat:@"[NINA Patcher] Bad URL: %@", URLString]);
 		return originalURL;
 	}
 
@@ -52,6 +52,13 @@
 		modifyHost = true;
 	} else if ([host isEqualToString:@"aol.com"]) {
 		newHost = @"nina.bz";
+		modifyHost = true;
+	} else if ([host isEqualToString:@"icq.net"]) { // ICQ
+		newHost = @"nina.bz";
+		modifyHost = true;
+	} else if ([host hasSuffix:@".icq.net"] && ![host isEqualToString:@"icq.net"])  {
+		NSString *subdomain =  [host substringToIndex:[host length] - 8];
+		newHost = [subdomain stringByAppendingString:@".nina.bz"];
 		modifyHost = true;
 	}
 
